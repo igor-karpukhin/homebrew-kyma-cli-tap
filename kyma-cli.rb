@@ -1,6 +1,3 @@
-#!/usr/bin/ruby
-
-
 class KymaCLI < Formula
   desc "Kyma command-line interface"
   homepage "https://kyma-project.io"
