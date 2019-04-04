@@ -15,8 +15,7 @@ class Kymacli < Formula
 
   def install
     ENV["GOPATH"] = buildpath
-    dir = buildpath/"src/kyma-incubator/kyma-cli"
-
+    dir = buildpath
 
     cd dir do
       system "make resolve && make build"
