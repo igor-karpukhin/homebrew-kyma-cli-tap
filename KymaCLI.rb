@@ -14,12 +14,14 @@ class Kymacli < Formula
   depends_on "dep" => :build
 
   def install
-    ENV["GOPATH"] = buildpath
+    ENV["GOPATH"] += buildpath
     dir = buildpath
+    dir.install buildpath.children - [buildpath/".brew_home"]
 
     cd dir do
       system "make resolve && make build"
       bin.install "bin/kyma-darwin"
     end
+    prefix.install_metafiles
   end
 end
