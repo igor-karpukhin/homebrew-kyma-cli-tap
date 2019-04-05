@@ -7,7 +7,7 @@ class KymaCli < Formula
   head "https://github.com/kyma-incubator/kyma-cli.git"
 
   depends_on "dep" => :build
-  delends_on "go" => :build
+  depends_on "go" => :build
 
   def install
     ENV["GOPATH"] = buildpath
