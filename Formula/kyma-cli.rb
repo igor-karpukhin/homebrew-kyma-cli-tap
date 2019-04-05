@@ -7,6 +7,7 @@ class KymaCli < Formula
   head "https://github.com/kyma-incubator/kyma-cli.git"
 
   depends_on "dep" => :build
+  delends_on "go" => :build
 
   def install
     ENV["GOPATH"] = buildpath
@@ -15,8 +16,8 @@ class KymaCli < Formula
 
     cd bin_path do
       ENV.deparallelize {system "make"}
-      system "make resolve"
-      system "make build"
+      system "make", "resolve"
+      system "make", "build"
       bin.install "bin/kyma-darwin"
     end
 
