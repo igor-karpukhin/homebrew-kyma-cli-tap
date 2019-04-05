@@ -1,4 +1,4 @@
-class Kymacli < Formula
+class KymaCLI < Formula
   desc "Kyma command-line interface"
   homepage "https://kyma-project.io"
   url "https://github.com/kyma-incubator/kyma-cli.git",
