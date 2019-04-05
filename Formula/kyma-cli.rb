@@ -14,8 +14,10 @@ class KymaCli < Formula
     bin_path.install Dir["*"]
 
     cd bin_path do
-      system "make resolve && make build"
-      #bin.install "bin/kyma-darwin"
+      ENV.deparallelize {system "make"}
+      system "make", "resolve"
+      system "make", "build"
+      bin.install "bin/kyma-darwin"
     end
 
     tests do
