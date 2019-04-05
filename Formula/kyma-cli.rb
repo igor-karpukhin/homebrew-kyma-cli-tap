@@ -19,10 +19,12 @@ class KymaCli < Formula
       system "make resolve"
       system "make", "build"
       bin.install "bin/kyma-darwin"
+      mv bin/"kyma-darwin", bin/"kyma-cli"
     end
 
     test do
-      #output = shell_output("#{bin}/kyma-cli --help")
+      output = shell_output("#{bin}/kyma-cli --help")
+      assert_match "kyma CLI controls a Kyma cluster.", output
     end
   end
 end
