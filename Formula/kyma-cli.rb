@@ -29,7 +29,7 @@ class KymaCli < Formula
 
   def caveats
     <<~EOS
-      Happy Kyma-ing! Type \033[1;31m kyma help \033[0m to start
+      Happy Kyma-ing! Type \033[1;31mkyma help\033[0m to start
       EOS
   end
 end
